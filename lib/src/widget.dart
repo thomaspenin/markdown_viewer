@@ -30,6 +30,7 @@ class MarkdownViewer extends StatefulWidget {
     this.selectable,
     this.selectionColor,
     this.copyIconBuilder,
+    this.textAlign = TextAlign.start,
     Key? key,
   }) : super(key: key);
 
@@ -53,6 +54,7 @@ class MarkdownViewer extends StatefulWidget {
   final Color? selectionColor;
   final bool? selectable;
   final CopyIconBuilder? copyIconBuilder;
+  final TextAlign? textAlign;
 
   /// A function used to modify the parsed AST nodes.
   ///
@@ -123,6 +125,7 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
       selectionColor: widget.selectionColor ?? const Color(0x4a006ff8),
       selectionRegistrar: selectionRegistrar,
       copyIconBuilder: widget.copyIconBuilder,
+      textAlign: widget.textAlign,
     );
 
     List<md.Node> astNodes;
